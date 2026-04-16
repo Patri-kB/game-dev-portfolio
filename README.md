@@ -54,6 +54,11 @@ Generic system for:
 
 ---
 
+## Related Project
+- Tales of Demagost "Series"
+  - [ToD: Exodus on Steam](https://store.steampowered.com/app/3790890/Tales_of_Demagost_Exodus/)
+  - [ToD: Rebel War on itch.io](https://patrikeu-studios.itch.io/tales-of-demagost-rebel-war)
+
 ## Notes
 - No commercial assets or proprietary game content included
 - All shared code is safe for public use
