@@ -1,0 +1,29 @@
+extends Node
+
+var SAVED_SYSTEMS: Array[Node] = []
+
+func _ready() -> void:
+	SAVED_SYSTEMS = [
+		TimeManager,
+		#EnergyManager,
+		#TransportSystem,
+		#BuildManager,
+	]
+
+func save_game(path: String) -> void:
+	var save_data := SaveGame.new()
+	for system in SAVED_SYSTEMS:
+		save_data.system_states[system.name] = system.export_state()
+	ResourceSaver.save(save_data, path)
+
+func load_game(path: String) -> void:
+	if not ResourceLoader.exists(path):
+		print("Save file not found!")
+		return
+	var save_data := ResourceLoader.load(path) as SaveGame
+	if not save_data:
+		print("Failed to load save file!")
+		return
+	for system in SAVED_SYSTEMS:
+		if system.name in save_data.system_states:
+			system.import_state(save_data.system_states[system.name])
