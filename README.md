@@ -28,7 +28,7 @@ This repository contains **only my own code**, not the full Galgo library.
 - Swap mutation  
 - Inversion mutation  
 
-### 📄 Licensing
+### Licensing
 The original Galgo library is MIT‑licensed.  
 All files in this repository are either:
 - my own implementations, or  
