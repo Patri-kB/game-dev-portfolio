@@ -1,0 +1,24 @@
+// Swap Mutation
+template <typename T>
+void SwapMutation(galgo::CHR<T>& chr)
+{
+   T mutrate = chr->mutrate();
+
+   if (mutrate == 0.0) return;
+
+   for (int i = 0; i < chr->nbgene(); ++i) {
+      // Apply mutation with probability mutrate
+      if (galgo::proba(galgo::rng) <= mutrate) {
+         // Generate random indices for swapping
+         int index1 = galgo::uniform<int>(0, chr->nbgene() - 1);
+         int index2 = galgo::uniform<int>(0, chr->nbgene() - 1);
+
+         // Swap the genes at index1 and index2
+         T gene1 = chr->getGene(index1);
+         T gene2 = chr->getGene(index2);
+
+         chr->setGeneValue(index1, gene2);
+         chr->setGeneValue(index2, gene1);
+      }
+   }
+}
