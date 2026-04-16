@@ -1,75 +1,59 @@
 # PatrikB – Programming Portfolio
 
-This repository contains selected examples of my work in software development, system design, and applied algorithms.  
-My focus areas include C++ (evolutionary algorithms, library extensions) and Godot/GDScript (modular game systems).
+This repository showcases selected programming work focused on **system design, modular architecture, and applied algorithms**.
 
-The repository is divided into two main sections:
-
-- **C++ – Extensions of the Galgo evolutionary algorithm library (MIT license)**
-- **Godot – Modular systems from the ToD: Incremental project (safe, asset‑free code samples)**
+## Focus Areas
+- **C++** – evolutionary algorithms, library extensions
+- **Godot / GDScript** – modular game systems, system architecture
 
 ---
 
-## 1. C++ – Galgo Library Extensions
+## Repository Structure
 
-As part of my master's thesis, I extended the open‑source **Galgo** library (MIT license) with new evolutionary operators, mutation strategies, and stopping criteria.  
-The goal was to improve evolutionary diversity and enable more flexible optimization workflows.
+### 1. C++ – Galgo Library Extensions
+As part of my master's thesis, I extended the MIT-licensed Galgo evolutionary algorithm library.
 
-### Implemented Features
-This repository contains **only my own code**, not the full Galgo library.
+**Focus:**
+- extending existing codebases
+- designing reusable operators
+- improving flexibility of optimization workflows
 
-#### New crossover operators
-- OX (Ordered Crossover)  
-- CX (Cycle Crossover)  
-- Even–Odd crossover  
+**Implemented:**
+- **Crossover operators:** OX, CX, Even–Odd  
+- **Mutation operators:** Gaussian, Swap, Inversion  
+- **Custom stopping criteria**
 
-#### New mutation operators
-- Gaussian mutation  
-- Swap mutation  
-- Inversion mutation  
-
-### Licensing
-The original Galgo library is MIT‑licensed.  
-All files in this repository are either:
-- my own implementations, or  
-- small contextual snippets that retain the original MIT copyright header.
+All code included here is my own implementation (original library not included).
 
 ---
 
-## 2. Godot – Modular Systems (GDScript)
+### 2. Godot – Modular Systems (GDScript)
+Standalone, asset-free systems extracted from my game development work.
 
-This section contains **safe, isolated code samples** from my project *ToD: Incremental*.  
-No assets, no proprietary gameplay logic, and no content from *ToD: Exodus / Project Kondela* is included.
+#### Save/Load Manager (Refactoring Example)
+- transition from explicit loading → registry-based system
+- demonstrates:
+  - modularity
+  - refactoring approach
+  - maintainability improvements
 
-### Save/Load Manager (old example → new - blueprint)
-A refactoring example demonstrating:
+#### Actions Manager
+Generic system for:
+- action registration
+- input handling
+- subsystem dispatching
 
-- explicit subsystem loading (old version)  
-- generic, registry‑based loading (new version)  
+---
 
-This showcases:
-- modularity  
-- refactoring  
-- cleaner architecture  
-- maintainability improvements  
+## What This Repository Demonstrates
+- ability to work with and extend existing C++ libraries
+- practical understanding of evolutionary algorithms
+- focus on **clean, modular system design**
+- experience with real-world refactoring
+- active development outside of professional work
 
-### Actions Manager
-A standalone system for:
+---
 
-- action registration  
-- input processing  
-- subsystem dispatching  
-
-Again, this is purely technical code without any commercial content.
-
-## Purpose of This Repository
-
-This repository serves as a **technical portfolio**, demonstrating:
-
-- ability to extend and modify C++ libraries  
-- understanding of evolutionary algorithms  
-- clean, maintainable system design  
-- experience with Godot and GDScript  
-- practical refactoring and modular architecture  
-
-No commercial assets or proprietary game content are included.
+## Notes
+- No commercial assets or proprietary game content included
+- All shared code is safe for public use
