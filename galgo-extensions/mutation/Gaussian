@@ -1,0 +1,33 @@
+//Gaussian mutation
+//define Gaussian destribution
+template <typename T>
+double gauss(double mean, double stddev) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::normal_distribution<double> dist(mean, stddev);
+    return dist(gen);
+}
+
+// Gaussian Mutation
+template <typename T>
+void GaussianMutation(galgo::CHR<T>& chr)
+{
+   T mutrate = chr->mutrate();
+
+   if (mutrate == 0.0) return;
+
+   for (int i = 0; i < chr->nbgene(); ++i) {
+      // Apply mutation with probability mutrate
+      if (galgo::proba(galgo::rng) <= mutrate) {
+         // Generate a random number from a Gaussian distribution
+         std::random_device rd;
+         std::mt19937 gen(rd());
+         std::normal_distribution<T> distribution(0.0, 1.0); // mean = 0, standard deviation = 1
+         T perturbation = distribution(gen);
+
+         // Perturb the gene value
+         T newValue = chr->getGene(i) + perturbation;
+         chr->setGeneValue(i, newValue);
+      }
+   }
+}
